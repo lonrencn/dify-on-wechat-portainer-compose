@@ -39,14 +39,13 @@ services:
       CHANNEL_TYPE: "gewechat"
       GEWECHAT_TOKEN: ""
       GEWECHAT_APP_ID: ""
-      # 【docker内分配的bot-wechat - IP】位置先随便填一个，这里是要修改成docker为堆栈分配的IP的。
       GEWECHAT_BASE_URL: "http://【docker内分配的bot-wechat - IP】:2531/v2/api"
       GEWECHAT_CALLBACK_URL: "http://【docker内分配的bot-wechat - IP】:9919/v2/api/callback/collect"
       GEWECHAT_DOWNLOAD_URL: "http://【docker内分配的bot-wechat - IP】:2532/download"
     
       # dify 相关配置
-      DIFY_API_BASE: 'http://dify-host/v1'
-      DIFY_API_KEY: 'app-'
+      DIFY_API_BASE: 'http://dify-host/v1' # 这里的你的dify地址，如果你用的反代，别忘了加端口号，平台给的地址里默认没有端口号。
+      DIFY_API_KEY: 'app-'  # 这里是在dify 里创建的
       DIFY_APP_TYPE: 'chatbot'                    # dify助手类型 chatbot(对应聊天助手)/agent(对应Agent)/workflow(对应工作流)，默认为chatbot
       MODEL: 'dify'                               # 默认为 dify,默认使用coze 则填写 coze,也可以在启动后使用godcmd=>"#model coze"进行模型热切换(必须先认证管理员权限)
       DIFY_CONVERSATION_MAX_MESSAGES: '5'       # dify目前不支持设置历史消息长度，暂时使用超过最大消息数清空会话的策略，缺点是没有滑动窗口，会突然丢失历史消息，当设置的值小于等于0，则不限>制历史消息长度
@@ -82,7 +81,7 @@ services:
       # 如果想要实现在宿主机修改config.json然后通过 #reconf 热更新配置
       # 请执行 chmod 666 config.json，增加容器对宿主机的config.json文件修改权限
       # 注意环境变量配置优先级高于config.json配置
-      - /path/dify-on-wechat/config.json:/app/config.json  #【你自己的路径】
+      # - /path/dify-on-wechat/config.json:/app/config.json  #【你自己的路径】
     networks:
       - bot-wechat
 
