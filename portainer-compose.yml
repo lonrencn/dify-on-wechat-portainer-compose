@@ -39,6 +39,7 @@ services:
       CHANNEL_TYPE: "gewechat"
       GEWECHAT_TOKEN: ""
       GEWECHAT_APP_ID: ""
+      # 【docker内分配的bot-wechat - IP】位置先随便填一个，这里是要修改成docker为堆栈分配的IP的。
       GEWECHAT_BASE_URL: "http://【docker内分配的bot-wechat - IP】:2531/v2/api"
       GEWECHAT_CALLBACK_URL: "http://【docker内分配的bot-wechat - IP】:9919/v2/api/callback/collect"
       GEWECHAT_DOWNLOAD_URL: "http://【docker内分配的bot-wechat - IP】:2532/download"
