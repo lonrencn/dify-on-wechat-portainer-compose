@@ -8,7 +8,7 @@ services:
       - "2531:2531"
       - "2532:2532"
     volumes:
-      - /home/lonren/dify-on-wechat/gewechat/data:/root/temp
+      - /your-path/gewechat/data:/root/temp  【这里要建一个目录做gewe的数据保存路径】
     stdin_open: true  # 对应 -i 参数
     tty: true         # 对应 -t 参数
     networks:
