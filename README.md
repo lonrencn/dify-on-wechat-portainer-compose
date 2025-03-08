@@ -5,6 +5,12 @@ dify-on-wechat 一键部署【无忧版】
 docker
 portainer
 
+```shell
+mkdir dify-on-wechat
+cd dify-on-wechat
+mkdir -p gewechat/data 这里要建一个目录做gewe的数据保存路径
+```
+
 可能docker-compose就可以，我没试过。
 我所有的docker都是用portainer中文版管理的。
 
